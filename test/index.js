@@ -2,9 +2,12 @@ var request = require('request');
 describe('first suite',function(){
 
     beforeEach(function(){
-       request('http://localhost:3000/start',function(error,res,body){
+       request('http://192.168.0.9:3000/start',function(error,res,body){
            if(error)
                console.log(error);
+
+           console.log(res);
+           console.log(body);
        });
     });
 
@@ -13,9 +16,12 @@ describe('first suite',function(){
     });
 
     afterEach(function () {
-        request('http://localhost:3000/quit',function(error,res,body){
+        request('http://192.168.0.9:3000/quit',function(error,res,body){
            if(error)
                console.log(error);
+
+            console.log(res);
+            console.log(body);
         });
     })
 
