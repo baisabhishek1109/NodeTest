@@ -16,7 +16,7 @@ describe('first suite',function(){
         console.log('testing!!!!');
     });
 
-    afterEach(function () {
+    afterEach(function (done) {
         console.log('after each');
         request('http://192.168.0.9:3000/quit',function(error,res,body){
            if(error)
@@ -26,6 +26,7 @@ describe('first suite',function(){
 
             console.log(res);
             console.log(body);
+            done();
         });
     })
 
