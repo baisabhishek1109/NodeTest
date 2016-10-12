@@ -1,6 +1,8 @@
 var request = require('request');
 describe('first suite',function(){
 
+    this.timeout(60000);
+
     beforeEach(function(){
         console.log('before each');
        request('http://192.168.0.9:3000/start',function(error,res,body){
